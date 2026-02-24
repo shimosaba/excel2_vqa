@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 出力ディレクトリ
+output/
+output_fixed/
+output_zaiko/
+output_zaiko_fixed/
+output_test/
+
+# ツール設定・キャッシュ
+.claude/
+.serena/
+.mcp.json
+.references/
+
+# その他
+README.html
+*.pptx
+
+# サンプル・個人データ
+*.xlsx

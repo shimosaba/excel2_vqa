@@ -1,0 +1,38 @@
+[project]
+name = "excel2-vqa"
+version = "0.1.0"
+description = "Excel → VQA dataset generator using Qwen3-VL"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate>=1.12.0",
+    "markitdown[pptx]>=0.1.5",
+    "matplotlib>=3.7",
+    "openpyxl>=3.1",
+    "pandas>=2.0",
+    "pillow>=10.0",
+    "qwen-vl-utils>=0.0.14",
+    "torch>=2.9.1",
+    "torchvision>=0.24.1",
+    "transformers>=4.57.6",
+    "pdf2image>=1.16",
+    "click>=8.0",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "torch>=2.2",
+    "transformers>=4.45",
+    "accelerate>=0.28",
+    "qwen-vl-utils>=0.0.8",
+]
+vllm = [
+    "torch>=2.2",
+    "transformers>=4.45",
+    "accelerate>=0.28",
+    "qwen-vl-utils>=0.0.8",
+    "vllm>=0.13.0",
+]
+
+[project.scripts]
+excel2vqa = "main:main"
