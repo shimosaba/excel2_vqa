@@ -43,18 +43,37 @@ class CropInfo:
 # ── プロンプト ──────────────────────────────────────────────────────────────
 
 _DETECT_SYSTEM = textwrap.dedent("""\
-    あなたはExcelスプレッドシートのレイアウト解析の専門家です。
-    与えられたシート画像を解析し、意味的にまとまりのある要素ブロックを検出します。
-    要素ブロックの例: テーブル、グラフ、タイトル領域、KPIカード、注釈ブロック など
+    あなたはExcelスプレッドシートのVQAデータセット作成のための領域検出専門家です。
+    与えられたシート画像を解析し、質問・回答が成立する情報量を持つブロックを検出します。
+    【検出すべき】データ表・グラフ・KPIエリア（数値含む）・複数行の説明文・手順リスト
+    【検出しない】タイトル行単体・ナビゲーションボタン/リンク行・1行の注釈・装飾的な要素
     出力はJSON配列のみを返してください。他のテキストは不要です。
 """)
 
 # Qwen3-VL のネイティブ bbox_2d 形式（0〜1000 相対座標）を使用
 _DETECT_PROMPT = textwrap.dedent("""\
-    このExcelシートの画像を解析し、意味的にまとまりのある要素ブロックを最大 {max_crops} 個検出してください。
+    このExcelシートの画像を解析し、VQAタスクとして質問・回答が成立する情報量を持つブロックを検出してください。
 
-    検出ルール:
-    - テーブル、グラフ、タイトル、KPIエリアなど独立した情報単位を1ブロックとする
+    【ブロック数の判断】
+    - 情報量が少ないシート（タイトル・ボタン・説明文のみ等）: 意味のある領域をまとめてシート全体に近い1ブロックとして検出
+    - 情報量が多いシート（複数テーブル・グラフ・KPI等）: テーブル・グラフ・説明文等の意味単位ごとに数ブロックに分割
+
+    【検出してよい要素（情報量あり）】
+    - データテーブル: ヘッダー行＋データ行を含む範囲（必ずヘッダー〜末尾まで含める）
+    - グラフ・チャート
+    - KPIエリア: 数値・指標を含む複数セルの範囲
+    - 説明文ブロック: 複数行にわたるテキスト
+    - 手順・ステップリスト: 複数項目を含むもの
+
+    【検出してはいけない要素】
+    - タイトル行・見出し単体（それのみを1ブロックとしない）
+    - ナビゲーションボタン・リンクだけの行
+    - 1〜2行の注釈・フッターテキスト単体
+    - 装飾的な区切り線・空白領域・アイコン単体
+
+    【bboxの指定方針】
+    - テーブルはヘッダー行〜データ末尾まで必ず含める
+    - タイトルがテーブルに近接している場合はテーブルと統合して1ブロックにする
     - 余白・空白領域は含めない
     - ブロックは重複しないようにする
 
@@ -62,7 +81,7 @@ _DETECT_PROMPT = textwrap.dedent("""\
     [
       {{
         "id": 1,
-        "label": "要素の種類 (例: 売上テーブル, 月次グラフ, タイトル)",
+        "label": "要素の種類 (例: 在庫リストテーブル, 月次グラフ, KPIエリア)",
         "description": "この要素が何を表しているかの簡単な説明",
         "bbox_2d": [x1, y1, x2, y2]
       }},
@@ -71,6 +90,40 @@ _DETECT_PROMPT = textwrap.dedent("""\
 
     bbox_2d の値は 0〜1000 の相対座標で指定してください (左上が原点)。
 """)
+
+
+def _parse_json_array(text: str) -> list | None:
+    """
+    JSONの配列文字列をパースする。途中で切れている場合も完全なアイテムだけ救出する。
+
+    Returns:
+        パース成功時はリスト、失敗時は None
+    """
+    try:
+        result = json.loads(text)
+        if isinstance(result, list):
+            return result
+    except json.JSONDecodeError:
+        pass
+
+    bracket_pos = text.find("[")
+    if bracket_pos == -1:
+        return None
+
+    truncated = text[bracket_pos:]
+    last_close = truncated.rfind("}")
+    if last_close == -1:
+        return None
+    repaired = truncated[: last_close + 1] + "]"
+    try:
+        result = json.loads(repaired)
+        if isinstance(result, list):
+            print(f"  [情報] JSONが途中で切れていたため、完全な {len(result)} 件のみ救出しました")
+            return result
+    except json.JSONDecodeError:
+        pass
+
+    return None
 
 
 def _parse_bbox_2d(region: dict, img_w: int, img_h: int) -> tuple[int, int, int, int] | None:
@@ -135,15 +188,14 @@ def detect_and_crop(
 
     print(f"\n[STEP 2] 要素検出: {sheet_image_path.name}  ({w}x{h}px)")
 
-    prompt = _DETECT_PROMPT.format(max_crops=config.max_crops)
+    prompt = _DETECT_PROMPT
     raw = vlm.infer(sheet_image_path, prompt, system_prompt=_DETECT_SYSTEM)
 
     # マークダウンのコードブロックを除去してJSONパース
     raw_clean = re.sub(r"```(?:json)?", "", raw).strip().rstrip("`").strip()
-    try:
-        regions = json.loads(raw_clean)
-    except json.JSONDecodeError as e:
-        print(f"  JSON パース失敗 ({e}), スキップ")
+    regions = _parse_json_array(raw_clean)
+    if regions is None:
+        print(f"  JSON パース失敗, スキップ")
         print(f"  生レスポンス: {raw[:300]}")
         return []
 
@@ -158,8 +210,8 @@ def detect_and_crop(
         bw = x2 - x1
         bh = y2 - y1
 
-        # 小さすぎる矩形はノイズとしてスキップ
-        if bw < 30 or bh < 30:
+        # 小さすぎる矩形はノイズとしてスキップ（高さ100px未満はタイトル・ボタン・1行テキスト相当）
+        if bw < 50 or bh < 100:
             continue
 
         # パディングを加えてクロップ
@@ -189,6 +241,10 @@ def detect_and_crop(
             bbox=BBox(x=x1, y=y1, width=bw, height=bh),
         ))
         print(f"  → {crop_name}  [{label}]  ({x1},{y1})-({x2},{y2})  {bw}x{bh}px")
+
+    if len(crop_infos) > config.crop_limit:
+        print(f"  [警告] 検出数 {len(crop_infos)} がガードレール {config.crop_limit} を超えたため切り詰めます")
+        crop_infos = crop_infos[:config.crop_limit]
 
     print(f"  {len(crop_infos)} 要素を検出・クロップしました")
     return crop_infos

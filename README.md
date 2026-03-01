@@ -63,9 +63,9 @@ uv run python main.py <excel_file> [OPTIONS]
 | `EXCEL_FILE` | (必須) | 入力 Excel ファイルのパス |
 | `--output`, `-o` | `output` | 出力ディレクトリ |
 | `--model` | `Qwen/Qwen3-VL-2B-Instruct` | 使用するモデル名 |
-| `--max-crops` | `10` | 1シートあたりの最大クロップ数 |
-| `--questions-per-crop` | `5` | クロップ画像1枚あたりの質問数 |
 | `--dpi` | `200` | シート画像の解像度 (DPI) |
+| `--crop-limit` | `30` | クロップ数の絶対上限（ガードレール）。通常変更不要。 |
+| `--question-limit` | `20` | 質問数の絶対上限（ガードレール）。通常変更不要。 |
 
 ### 実行例
 
@@ -74,7 +74,7 @@ uv run python main.py <excel_file> [OPTIONS]
 uv run python main.py sample.xlsx
 
 # 出力先と品質を指定
-uv run python main.py sample.xlsx --output ./dataset --dpi 300 --max-crops 20
+uv run python main.py sample.xlsx --output ./dataset --dpi 300
 
 # 大きいモデルを使用
 uv run python main.py sample.xlsx --model Qwen/Qwen3-VL-7B-Instruct
@@ -144,8 +144,8 @@ CLI オプションの代わりに環境変数でも設定できます。
 | `VQA_MAX_NEW_TOKENS` | 最大生成トークン数 |
 | `VQA_TEMPERATURE` | 生成温度 |
 | `VQA_DPI` | `--dpi` |
-| `VQA_MAX_CROPS` | `--max-crops` |
-| `VQA_QUESTIONS_PER_CROP` | `--questions-per-crop` |
+| `VQA_CROP_LIMIT` | `--crop-limit` |
+| `VQA_QUESTION_LIMIT` | `--question-limit` |
 | `VQA_OUTPUT_DIR` | `--output` |
 
 ## プロジェクト構造

@@ -15,6 +15,16 @@ output_fixed/
 output_zaiko/
 output_zaiko_fixed/
 output_test/
+output_*/
+
+# ログファイル
+*.log
+
+# Jupyter notebooks の出力
+visualize_llava.ipynb
+
+# Zone.Identifier ファイル (WSL)
+*.xlsx:Zone.Identifier
 
 # ツール設定・キャッシュ
 .claude/

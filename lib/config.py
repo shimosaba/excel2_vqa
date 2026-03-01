@@ -10,21 +10,21 @@ from dataclasses import dataclass, field
 @dataclass
 class Config:
     # VLM モデル設定
-    model_name: str = "Qwen/Qwen3-VL-2B-Instruct"
+    model_name: str = "Qwen/Qwen3-VL-8B-Instruct-FP8"
     backend: str = "transformers"
     device: str = "cuda"
     dtype: str = "bfloat16"
 
     # 推論設定
-    max_new_tokens: int = 1024
+    max_new_tokens: int = 4096
     temperature: float = 0.1
 
     # 画像レンダリング設定
-    dpi: int = 200
+    dpi: int = 0                  # 0 = シートサイズに応じて自動計算
 
-    # パイプライン設定
-    max_crops: int = 10
-    questions_per_crop: int = 5
+    # ガードレール（VLMが極端な数を返した場合のみ使用）
+    crop_limit: int = 30          # クロップ数の絶対上限（VLMが異常値を返した場合の保護）
+    question_limit: int = 15      # 質問数の絶対上限（絞って品質向上）
 
     # 出力設定
     output_dir: str = "output"
@@ -47,10 +47,10 @@ class Config:
             cfg.temperature = float(v)
         if v := os.environ.get("VQA_DPI"):
             cfg.dpi = int(v)
-        if v := os.environ.get("VQA_MAX_CROPS"):
-            cfg.max_crops = int(v)
-        if v := os.environ.get("VQA_QUESTIONS_PER_CROP"):
-            cfg.questions_per_crop = int(v)
+        if v := os.environ.get("VQA_CROP_LIMIT"):
+            cfg.crop_limit = int(v)
+        if v := os.environ.get("VQA_QUESTION_LIMIT"):
+            cfg.question_limit = int(v)
         if v := os.environ.get("VQA_OUTPUT_DIR"):
             cfg.output_dir = v
         return cfg

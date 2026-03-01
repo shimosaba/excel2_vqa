@@ -24,21 +24,21 @@ from lib.formatters import save_all
 @click.argument("excel_file", type=click.Path(exists=True, path_type=Path))
 @click.option("--output", "-o", default="output", show_default=True,
               help="出力ディレクトリ")
-@click.option("--model", default="Qwen/Qwen3-VL-2B-Instruct", show_default=True,
+@click.option("--model", default="Qwen/Qwen3-VL-8B-Instruct-FP8", show_default=True,
               help="使用するモデル名")
-@click.option("--max-crops", default=10, show_default=True,
-              help="1シートあたりの最大クロップ数")
-@click.option("--questions-per-crop", default=5, show_default=True,
-              help="クロップ画像1枚あたりの質問数")
-@click.option("--dpi", default=200, show_default=True,
-              help="シート画像の解像度 (DPI)")
+@click.option("--dpi", default=0, show_default=True,
+              help="シート画像の解像度 (DPI)。0=シートサイズに応じて自動設定")
+@click.option("--crop-limit", default=30, show_default=True,
+              help="クロップ数の絶対上限（ガードレール）。通常変更不要。")
+@click.option("--question-limit", default=15, show_default=True,
+              help="質問数の絶対上限（ガードレール）。通常変更不要。")
 def main(
     excel_file: Path,
     output: str,
     model: str,
-    max_crops: int,
-    questions_per_crop: int,
     dpi: int,
+    crop_limit: int,
+    question_limit: int,
 ) -> None:
     """
     Excel ファイルから VQA データセットを全自動生成する。
@@ -57,9 +57,9 @@ def main(
     # ── 設定構築 ────────────────────────────────────────────────────────
     config = Config.from_env()
     config.model_name = model
-    config.max_crops = max_crops
-    config.questions_per_crop = questions_per_crop
     config.dpi = dpi
+    config.crop_limit = crop_limit
+    config.question_limit = question_limit
     config.output_dir = output
 
     output_dir = Path(output)
@@ -121,9 +121,15 @@ def main(
                 vqa_item.source_file = excel_file.name
 
                 # バリデーション
-                is_valid, reason = validate_vqa_item(vqa_item.question, vqa_item.answer)
+                is_valid, reason = validate_vqa_item(
+                    vqa_item.question,
+                    vqa_item.answer,
+                    confidence=vqa_item.confidence,
+                    question_type=vqa_item.question_type,
+                    difficulty=vqa_item.difficulty,
+                )
                 if not is_valid:
-                    print(f"  [{entry_id}] バリデーション除外: {reason}")
+                    print(f"  [{entry_id}] バリデーション除外: {reason} / 質問: {q.question[:60]!r}")
                     continue
 
                 all_vqa_items.append(vqa_item)

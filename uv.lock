@@ -1054,7 +1054,6 @@ name = "excel2-vqa"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "accelerate" },
     { name = "click" },
     { name = "markitdown", extra = ["pptx"] },
     { name = "matplotlib" },
@@ -1062,11 +1061,8 @@ dependencies = [
     { name = "pandas" },
     { name = "pdf2image" },
     { name = "pillow" },
-    { name = "qwen-vl-utils" },
-    { name = "torch" },
-    { name = "torchvision" },
     { name = "tqdm" },
-    { name = "transformers" },
+    { name = "vllm" },
 ]
 
 [package.optional-dependencies]
@@ -1086,7 +1082,6 @@ vllm = [
 
 [package.metadata]
 requires-dist = [
-    { name = "accelerate", specifier = ">=1.12.0" },
     { name = "accelerate", marker = "extra == 'gpu'", specifier = ">=0.28" },
     { name = "accelerate", marker = "extra == 'vllm'", specifier = ">=0.28" },
     { name = "click", specifier = ">=8.0" },
@@ -1096,17 +1091,14 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.0" },
     { name = "pdf2image", specifier = ">=1.16" },
     { name = "pillow", specifier = ">=10.0" },
-    { name = "qwen-vl-utils", specifier = ">=0.0.14" },
     { name = "qwen-vl-utils", marker = "extra == 'gpu'", specifier = ">=0.0.8" },
     { name = "qwen-vl-utils", marker = "extra == 'vllm'", specifier = ">=0.0.8" },
-    { name = "torch", specifier = ">=2.9.1" },
     { name = "torch", marker = "extra == 'gpu'", specifier = ">=2.2" },
     { name = "torch", marker = "extra == 'vllm'", specifier = ">=2.2" },
-    { name = "torchvision", specifier = ">=0.24.1" },
     { name = "tqdm", specifier = ">=4.60" },
-    { name = "transformers", specifier = ">=4.57.6" },
     { name = "transformers", marker = "extra == 'gpu'", specifier = ">=4.45" },
     { name = "transformers", marker = "extra == 'vllm'", specifier = ">=4.45" },
+    { name = "vllm", specifier = ">=0.8.0" },
     { name = "vllm", marker = "extra == 'vllm'", specifier = ">=0.13.0" },
 ]
 
