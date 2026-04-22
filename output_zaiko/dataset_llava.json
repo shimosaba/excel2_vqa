@@ -1,0 +1,1892 @@
+[
+  {
+    "id": "entry_0001",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫の合計評価額はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥4,649.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0002",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫品目数はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫品目は11個です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0003",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目6の在庫の評価額はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥350.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0004",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目1と品目2の在庫の評価額を比べると、どちらが大きいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目2の在庫の評価額が大きい"
+      }
+    ]
+  },
+  {
+    "id": "entry_0005",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫の評価額が最も高い品目はどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目 2"
+      }
+    ]
+  },
+  {
+    "id": "entry_0006",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫の評価額の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥4,649.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0007",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫リストに記載されている行の数はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "11行です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0008",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの在庫リストは何を示していますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫リストは、11品目の在庫状況を示しており、合計在庫評価額は¥4,649.00です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0009",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nヘッダー行にはどの項目が含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "SKU、説明、ピン番号、場所、単位、数量、再発注の数量、コスト、在庫の評価額、再発注"
+      }
+    ]
+  },
+  {
+    "id": "entry_0010",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目9の在庫評価額は品目10と比べてどのくらいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目9の在庫評価額は¥280.00で、品目10の¥900.00と比べて¥620.00少ない。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0011",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が1000円以上の品目はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "5つあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0012",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額の平均値はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫評価額の平均値は¥464.90です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0013",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額の最大値と最小値の差はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫評価額の最大値と最小値の差は¥1,200.00 - ¥50.00 = ¥1,150.00です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0014",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が最も高い品目はどの場所にありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫評価額が最も高い品目は「品目 2」で、場所は「2列目、スロット 1」です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0015",
+    "image": "crops/sheet01_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額の高い品目は、再発注の数量も高い傾向にあるか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫評価額の高い品目は、再発注の数量も高い傾向にある。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0016",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫の合計評価額はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥4,649.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0017",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫品目数はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫品目は11個です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0018",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目6の在庫の評価額はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥350.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0019",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目4と品目5の在庫の評価額を比べると、どちらが大きいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目4の在庫評価額が大きい"
+      }
+    ]
+  },
+  {
+    "id": "entry_0020",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n再発注の数量が最大の品目はどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目 9（WT98768）"
+      }
+    ]
+  },
+  {
+    "id": "entry_0021",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫の評価額の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥4,649.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0022",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの表には何行のデータがありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "11行のデータがあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0023",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこのテーブルは何を示していますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫の合計評価額が¥4,649.00の在庫リストです。在庫品目は11個、ビン数は6個です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0024",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nヘッダー行にはどの項目が含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "SKU、説明、ビン番号、場所、単位、数量、再発注の数量、コスト、在庫の評価額、再発注"
+      }
+    ]
+  },
+  {
+    "id": "entry_0025",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目1と品目2の在庫評価額の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目1と品目2の在庫評価額の合計は¥1,800.00です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0026",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が最も高い品目はどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目 2"
+      }
+    ]
+  },
+  {
+    "id": "entry_0027",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目11の在庫評価額は品目10の何倍ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目11の在庫評価額は品目10の0.27倍です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0028",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が¥1,200.00以上の品目はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "3つあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0029",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額の平均値はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥422.64"
+      }
+    ]
+  },
+  {
+    "id": "entry_0030",
+    "image": "crops/sheet02_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n再発注が「再発注」と表示されている品目はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "2つ"
+      }
+    ]
+  },
+  {
+    "id": "entry_0031",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n注文番号がTP001-1の行のSKUは何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "SP7875, YE98767, BM87684, TS3456, MK676554"
+      }
+    ]
+  },
+  {
+    "id": "entry_0032",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫数が最大の行のピッキングの数量はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "40"
+      }
+    ]
+  },
+  {
+    "id": "entry_0033",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目4と品目7の在庫数を比較するとどちらが大きいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目4の在庫数が40で、品目7の在庫数が10なので、品目4の方が大きい。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0034",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫数が40の行と在庫数が10の行を比較すると、在庫数の差はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "30"
+      }
+    ]
+  },
+  {
+    "id": "entry_0035",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nピッキングの数量の合計はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ピッキングの数量の合計は15です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0036",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこのテーブルには何行のデータが含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "5行のデータが含まれています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0037",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこのテーブルは何を示すものでしょうか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫ピッキングリストで、注文番号TP001-1に対応する商品のピッキング数量、在庫数、品目説明、単位、ビン番号、場所を示しています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0038",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nヘッダー行には何項目の情報が含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ヘッダー行には8項目の情報が含まれています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0039",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫数が20の行と在庫数が15の行の場所を比較すると、どちらが列目が大きいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫数が20の行の場所は「2列目」、在庫数が15の行の場所は「1列目」なので、在庫数が20の行の列目が大きい。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0040",
+    "image": "crops/sheet03_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nどのSKUが最も在庫数が少ないですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "SKU BM87684 が最も在庫数が少ない（在庫数：10）です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0041",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nT345のビン番号に対応する幅はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "50"
+      }
+    ]
+  },
+  {
+    "id": "entry_0042",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nT9876の高さはどのくらいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "10"
+      }
+    ]
+  },
+  {
+    "id": "entry_0043",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nT5789のビン（小）とT098のビン（中）を比較すると、どちらの高さが大きいですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T098のビン（中）の高さが7で、T5789のビン（小）の高さが5なので、T098のビン（中）の高さが大きい。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0044",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nT349の長さとT5789の長さを比べると、どちらが長いですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T349とT5789の長さはどちらも5です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0045",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「場所」列に「2列目、スロット2」と記載されているビン番号は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T9875"
+      }
+    ]
+  },
+  {
+    "id": "entry_0046",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「説明」列に「ビン（大）」と記載されている行の合計は何行ありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "4行"
+      }
+    ]
+  },
+  {
+    "id": "entry_0047",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこのテーブルはどのような情報を整理していますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "このテーブルは、ビン番号、説明、場所、幅、高さ、長さの6つの情報を整理しています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0048",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nヘッダー行には何項目の情報が含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "6項目の情報が含まれています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0050",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「高さ」の平均値はいくつですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "高さの平均値は7.5です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0051",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「場所」が「1列目」にあるビンの「幅」の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "50"
+      }
+    ]
+  },
+  {
+    "id": "entry_0052",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「ビン（大）」のうち、最も「場所」が右にあるのはどの番号ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T9875"
+      }
+    ]
+  },
+  {
+    "id": "entry_0053",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「長さ」の値が10のビンのうち、最も「高さ」が大きいのはどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T345"
+      }
+    ]
+  },
+  {
+    "id": "entry_0054",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「幅」の値が「高さ」の値の2倍以上である行はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "3行あります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0055",
+    "image": "crops/sheet04_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「場所」が「スロット2」にあるビンの中で、最も「幅」が大きいのはどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "T9875"
+      }
+    ]
+  },
+  {
+    "id": "entry_0056",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nナビゲーションリンクのサンプル画像はどこに示されていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ナビゲーションリンクのサンプル画像は、項目1と項目2にそれぞれ示されています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0057",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nセルC4のナビゲーションリンクのサンプル画像を参照するように指示されている箇所はどこですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "1番目の指示文に「セル C4 のナビゲーションリンクのサンプル画像を参照してください」とあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0058",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「在庫リスト」のナビゲーションリンクのヒントテキストはどこに表示されていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "「在庫リスト」のナビゲーションリンクのヒントテキストは、そのリンクの下に表示されています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0059",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「在庫ピッキングリスト」リンクと「参照」リンクのどちらが、ナビゲーションリンクの例として示されていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "「在庫ピッキングリスト」リンクがナビゲーションリンクの例として示されています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0061",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n4.1から4.6までの手順で、ユーザーがリンクをアクセスするために必要な手順は何個ありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "6個"
+      }
+    ]
+  },
+  {
+    "id": "entry_0062",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n4.1の手順で確認すべき「セルブロック」の例として挙げられているセルはどこですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫リストのワークシートのセル E2"
+      }
+    ]
+  },
+  {
+    "id": "entry_0064",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの説明文ブロックの目的は、アクセシビリティを活用するユーザーに対して何を伝えることですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "アクセシビリティを活用するユーザーに対して、ワークシートで重要な図形のコールアウトを行う方法を伝える。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0065",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nナビゲーションリンクの名前付けの重要性は、スクリーンリーダーを使用するユーザーにとって何を保証するかを推論してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "スクリーンリーダーを使用するユーザーに対して、リンクの宛先に関する明確で正確な情報を伝えることを保証する。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0066",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n4.3の手順でテキストを「図形の内側に完全に揃える」理由は、アクセシビリティの観点から何を保証するか推論してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "図形の内側に完全に揃えることで、アクセシビリティを活用するユーザーがリンクを含む図形にアクセスする際の手順を簡素化し、移動先を明確に伝える。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0067",
+    "image": "crops/sheet05_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「在庫リスト」リンクのヒントテキストが表示される理由は、ユーザーがリンクをクリックする前に何を理解する必要があるか推論してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "ユーザーはリンクがクリックされたときに何が起こるかを理解する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0068",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式はアクセシビリティ機能であるか？"
+      },
+      {
+        "from": "gpt",
+        "value": "いいえ、条件付き書式はアクセシビリティ機能ではありません。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0069",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nセルC8で追加されるのは何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "セルC8では、表の画像内で行われる強調表示のコンテキストが追加されます。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0070",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用タイミングを理解するためには何が必要ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0071",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n強調表示される品目を示す場合、色の指定は必要ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "必要ありません。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0072",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n再発注の品目はどのように強調表示されますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "再発注の品目は、以下の図の条件付き書式を使用して強調表示されます。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0073",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の目的は、条件セットに一致するデータを強調表示することですが、その目的を達成するために何が必要ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式の目的を達成するために、条件セットに一致するデータを強調表示する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0074",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用頻度をユーザーが理解できるようにするための方法は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "注釈を使用する。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0075",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n強調表示の色を指定する必要がある場合、どのような形式で指定する必要がありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "RGB値を色の指定とともに含めます。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0076",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式がアクセシビリティ機能でないという点を踏まえて、どのような用途で活用されるか？"
+      },
+      {
+        "from": "gpt",
+        "value": "見栄えの良いテンプレートを作成する際によく活用されます。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0077",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのものです。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0078",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのものです。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0079",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのものです。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0080",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのものです。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0081",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのものです。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0082",
+    "image": "crops/sheet06_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n条件付き書式の使用目的と、その使用タイミングを理解するための注釈の重要性について説明してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "条件付き書式は、定義された条件に一致するデータを強調表示するためのもので、見栄えの良いテンプレート作成に便利です。アクセシビリティを活用するユーザーがいつ使用されたかを理解できるように、注釈を付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0083",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目6の在庫評価額はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥350.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0084",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目1の数量は品目2と比べて何個少ないですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目1の数量は品目2と比べて10個少ない"
+      }
+    ]
+  },
+  {
+    "id": "entry_0085",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「再発注」のマークがついている行はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "3行あります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0086",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの在庫リストのヘッダー行には何が含まれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ヘッダー行にはSKU、説明、ピン番号、場所、単位、数量、再発注の数量、コスト、在庫の評価額、再発注の10項目が含まれています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0087",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目9の在庫評価額と再発注数量の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目9の在庫評価額と再発注数量の合計は¥308.00です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0088",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目11のコストは品目10と比べていくら安いですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目11のコストは品目10と比べて¥52.00安いです。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0089",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が最も高い品目はどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目 2（SKU: TR87680）"
+      }
+    ]
+  },
+  {
+    "id": "entry_0090",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「再発注」のマークがついている品目の中で、在庫評価額が最も高いのはどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目 6（SKU: PW98762）"
+      }
+    ]
+  },
+  {
+    "id": "entry_0091",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目1から品目11までの在庫評価額の合計はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥6,312.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0092",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目3と品目4の在庫評価額の差はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目3の在庫評価額は¥50.00、品目4は¥600.00なので、差は¥550.00です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0093",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目7の在庫評価額は品目8と比べて何円高いですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目7の在庫評価額は品目8と比べて¥93.00高い"
+      }
+    ]
+  },
+  {
+    "id": "entry_0094",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの表の「在庫評価額」列の平均値はいくらですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "¥650.00"
+      }
+    ]
+  },
+  {
+    "id": "entry_0095",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目1と品目2の在庫評価額の合計は、品目3の在庫評価額の何倍ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目1と品目2の在庫評価額の合計は品目3の在庫評価額の12倍です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0096",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n品目10の在庫評価額は、品目1の在庫評価額の何倍ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "品目10の在庫評価額は品目1の3倍です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0097",
+    "image": "crops/sheet06_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n在庫評価額が1,000円以上の品目はいくつありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "4つあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0098",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像のタイトルは何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "列Kの画像のタイトルは「在庫リスト」です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0099",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nサンプルの入力メッセージの内容は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "この見出しの下の、この列のフラグアイコンは、在庫内の品目を並べ替える準備ができている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0100",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像にある「再発注」のフラグアイコンの色は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "赤色"
+      }
+    ]
+  },
+  {
+    "id": "entry_0101",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像とサンプルの入力メッセージの内容を比べると、どちらが説明が詳しいか？"
+      },
+      {
+        "from": "gpt",
+        "value": "サンプルの入力メッセージが説明が詳しい。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0102",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンと、その上にある「再発注」の文字の色の違いは何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "「再発注」の文字は上部が濃い緑色で、下部のフラグアイコンは黄色です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0104",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像とサンプルの入力メッセージの内容を合わせて、この画像は何を目的としているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "列Kの画像と入力メッセージは、在庫リストの「再発注」フラグを表示する目的で使用されています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0105",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの画像の「再発注」のフラグアイコンが表示されている状態は、在庫リストのどの状態を示しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備ができている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0106",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態から、どのような行動が推論できるか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備がされている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0107",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態と、その上にある「再発注」の文字の関係性は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "「再発注」の文字は、その下にあるフラグアイコンの説明を示す見出しです。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0108",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態が、在庫リストのどの部分に位置しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "この見出しの下の、この列のフラグアイコンが表示されている状態です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0109",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態が、在庫リストのどの機能に関連しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備ができている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0110",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態が、在庫リストのどの操作に影響を与えるか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備ができた状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0111",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態が、在庫リストのどの情報と関連しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備ができている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0112",
+    "image": "crops/sheet07_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの画像の「再発注」のフラグアイコンが表示されている状態が、在庫リストのどの目的に貢献しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "在庫内の品目を並べ替える準備ができている状態を示します。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0113",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nセルD4の入力メッセージには何と書かれていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "この列のフラグアイコンは、在庫内の品目を再発注する準備ができている状態を示しています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0114",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの見出しセルで追加するテキストの目的は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "列Kの見出しセルで追加するテキストの目的は、視覚ユーザーに強調表示のコンテキストを伝えることです。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0115",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「アイコンのみ表示」オプションはどこで選択解除する必要がありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "「アイコンのみ表示」（条件付き書式オプション内）を必ず選択解除する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0116",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nカスタムスタイル「アイコンセット」に適用されるテキストは何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "「再発注」（Reorder）"
+      }
+    ]
+  },
+  {
+    "id": "entry_0117",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nセルF3のサンプル画像で表示されるテキストは何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "「再発注」(Reorder)"
+      }
+    ]
+  },
+  {
+    "id": "entry_0118",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの見出しセルでアイコンのみを使用する場合、アクセシビリティ対応のために何が必要ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "テキストを追加する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0119",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「アイコンのみ表示」オプションを解除しないと、どのような問題が発生しますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "「アイコンのみ表示」オプションを解除しないと、アクセシビリティ対応ができないため、視覚障害ユーザーがアイコンの意味を理解できなくなる可能性があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0120",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n列Kの見出しセルでテキストを非表示にした場合、どのような影響がありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "テキストが非表示になると、視覚的な効果を維持するために、アクセシビリティ対応としてテキストを追加する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0121",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの手順リストの目的は、ユーザーが何を理解できるようにすることですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ユーザーがアイコンセットがセル内にあることを理解できるようにすること。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0122",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文書で「再発注」という言葉は、どの状況で使用されていますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "「再発注」は、在庫リストの列Kの入力メッセージと、セルF3のサンプル画像でアイコンとともに表示されるテキストとして使用されています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0123",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nアイコンセットを含むテンプレートを作成する際、何を必ず選択解除する必要がありますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "【アイコンのみ表示】（条件付き書式オプション内）を必ず選択解除する必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0124",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文書の「ヒント」セクションで述べられているテキスト非表示の問題は、どのような状況で起こりますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "列の幅を小さくしたり、見出しのテキストを背景と同じ色にしたりすると、視覚的な効果を維持するためにテキストが非表示になることがあります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0125",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの手順リストで、アクセシビリティを活用するための入力メッセージの例として挙げられているセルはどれですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "セル D4"
+      }
+    ]
+  },
+  {
+    "id": "entry_0126",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文書で、アイコンセットを強調表示する場合にテキストを付ける理由は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "アイコンセットを強調表示する場合、ユーザーがアイコンの意味を理解できるようにテキストを付ける必要があります。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0127",
+    "image": "crops/sheet07_crop02.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの手順リストの内容から、ユーザーが理解すべき最も重要なポイントは何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "アイコンセットを使用する際、テキストを付けることが必須であり、アクセシビリティと視覚的効果の両立のために、適切なカスタムスタイルと入力メッセージの設定が必要です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0128",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの画像に表示されているテキストの内容は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "詳細情報 (アクセシビリティ対応のスプレッドシートの作成方法に関して) を、上記のリンクをクリックしてご確認ください。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0129",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「アクセシビリティ対応の」の後に続く文字は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "スプレッドシート"
+      }
+    ]
+  },
+  {
+    "id": "entry_0130",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「上記のリンクをクリックしてご確認ください」の前の文は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "詳細情報 (アクセシビリティ対応のスプレッドシートの作成方法に関して)"
+      }
+    ]
+  },
+  {
+    "id": "entry_0131",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の最後の文字は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "ください"
+      }
+    ]
+  },
+  {
+    "id": "entry_0132",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「詳細情報」の後に続く括弧内の内容は何ですか？"
+      },
+      {
+        "from": "gpt",
+        "value": "アクセシビリティ対応の"
+      }
+    ]
+  },
+  {
+    "id": "entry_0133",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\n「スプレッドシートの作成方法に関して」の後に続く文は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "上記のリンクをクリックしてご確認ください。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0134",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の全体を1文として、何を指示しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "上記のリンクをクリックして、アクセシビリティ対応のスプレッドシートの作成方法を確認してください。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0135",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の主語と述語をそれぞれ特定してください？"
+      },
+      {
+        "from": "gpt",
+        "value": "主語は「詳細情報（アクセシビリティ対応のスプレッドシートの作成方法に関して）」、述語は「を、上記のリンクをクリックしてご確認ください」です。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0136",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の目的語は何か？"
+      },
+      {
+        "from": "gpt",
+        "value": "上記のリンク"
+      }
+    ]
+  },
+  {
+    "id": "entry_0138",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の「ご確認ください」の意味は、どのような行動を促しているか？"
+      },
+      {
+        "from": "gpt",
+        "value": "リンクをクリックする行動を促しています。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0140",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の構造は、指示文と説明文の組み合わせであると解釈できますか？"
+      },
+      {
+        "from": "gpt",
+        "value": "はい、指示文と説明文の組み合わせと解釈できます。"
+      }
+    ]
+  },
+  {
+    "id": "entry_0142",
+    "image": "crops/sheet08_crop01.png",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nこの文の「スプレッドシートの作成方法に関して」の部分は、何を意味するか？"
+      },
+      {
+        "from": "gpt",
+        "value": "スプレッドシートの作成方法についての詳細情報を意味します。"
+      }
+    ]
+  }
+]
