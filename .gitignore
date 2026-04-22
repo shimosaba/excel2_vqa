@@ -12,10 +12,13 @@ wheels/
 # 出力ディレクトリ
 output/
 output_fixed/
-output_zaiko/
 output_zaiko_fixed/
 output_test/
+
+# output_* は基本除外だが、プッシュ対象は例外指定
 output_*/
+!output_zaiko/
+!output_zaiko_v2/
 
 # ログファイル
 *.log
@@ -38,3 +41,5 @@ README.html
 
 # サンプル・個人データ
 *.xlsx
+!zaiko.xlsx
+!zaiko_v2.xlsx
