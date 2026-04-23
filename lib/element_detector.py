@@ -70,14 +70,20 @@ _DETECT_PROMPT = textwrap.dedent("""\
     - ナビゲーションボタン・リンクだけの行
     - 装飾的な区切り線・空白領域・アイコン単体
 
-    【★最重要: bboxにタイトル・見出しを必ず含める】
+    【★最重要: bboxの上端(y1)はタイトル・見出しの上端から始めること】
     クロップ画像は後続のVQA質問・回答生成にそのまま使われます。
     タイトルや見出しがないと「何のデータか」が分からず、質問・回答の質が低下します。
-    そのため、各ブロックのbboxには以下を必ず含めてください:
-    - テーブルの直上にあるタイトル行・見出し行（例: 「在庫リスト」「月次売上集計」等）
-    - グラフの上部にあるタイトル
-    - セクションの見出し
-    タイトル・見出しだけを単独ブロックにするのではなく、必ず対応するコンテンツと一緒に1ブロックとして含めてください。
+
+    具体的なルール:
+    - テーブルの上にタイトル行（例:「在庫リスト」「月次売上集計」等）がある場合、
+      bboxのy1はタイトル行の上端から始めてください。テーブル本体のヘッダー行からではありません。
+    - グラフの上にタイトルがある場合も同様に、タイトルの上端からbboxを開始してください。
+    - シート名やセクション見出しがコンテンツの直上にある場合も含めてください。
+    - タイトル・見出しだけを単独ブロックにしないでください。必ず対応するコンテンツと一緒に1ブロックにしてください。
+    - **シート最上段のブロックのy1は、0〜50の範囲から開始してください**（シート上端のタイトル・見出しを確実に含めるため）。
+
+    よくある間違い: テーブルのヘッダー行（列名の行）からbboxを開始してしまい、
+    その上にあるシートタイトルを切り落としてしまうケース。これは避けてください。
 
     【その他のbbox方針】
     - テーブルはタイトル行〜データ末尾まで必ず含める
@@ -206,7 +212,8 @@ def detect_and_crop(
         print(f"  生レスポンス: {raw[:300]}")
         return []
 
-    crop_infos: list[CropInfo] = []
+    # ── フェーズ1: VLMの生bboxを収集 ──
+    raw_boxes: list[dict] = []
     for region in regions:
         coords = _parse_bbox_2d(region, w, h)
         if coords is None:
@@ -217,14 +224,48 @@ def detect_and_crop(
         bw = x2 - x1
         bh = y2 - y1
 
-        # 小さすぎる矩形はノイズとしてスキップ（高さ100px未満はタイトル・ボタン・1行テキスト相当）
         if bw < 50 or bh < 100:
             continue
 
-        # パディングを加えてクロップ
-        pad = 8
+        raw_boxes.append({
+            "coords": (x1, y1, x2, y2),
+            "label": region.get("label", "unknown"),
+            "description": region.get("description", "")
+        })
+
+    # ── フェーズ2: タイトル領域を確実に含めるため上方向を拡張 ──
+    # bboxをy1昇順にソートし、各boxを「真上の他boxの下端 (または0)」まで拡張
+    # 最上段のboxは必ずシート上端(y=0)まで拡張 → タイトルを取りこぼさない
+    raw_boxes.sort(key=lambda b: b["coords"][1])
+    extended_boxes: list[dict] = []
+    for i, box in enumerate(raw_boxes):
+        x1, y1, x2, y2 = box["coords"]
+        # 真上にある他boxの下端 (xレンジが重複するもののみ)
+        upper_limit = 0
+        for j in range(i):
+            ox1, oy1, ox2, oy2 = raw_boxes[j]["coords"]
+            if ox2 >= x1 and ox1 <= x2:  # x方向に重なりがある
+                upper_limit = max(upper_limit, oy2)
+        # 真上bboxとの間に8pxの余白を残す (0まで拡張する場合は不要)
+        new_y1 = upper_limit + 8 if upper_limit > 0 else 0
+        # 元のy1より下になる可能性は無いはず (soft check)
+        new_y1 = min(new_y1, y1)
+        extended_boxes.append({
+            **box,
+            "coords": (x1, new_y1, x2, y2),
+            "original_y1": y1,
+        })
+
+    # ── フェーズ3: クロップ保存 ──
+    crop_infos: list[CropInfo] = []
+    pad = 8
+    for box in extended_boxes:
+        x1, y1, x2, y2 = box["coords"]
+        bw = x2 - x1
+        bh = y2 - y1
+
         cx1 = max(0, x1 - pad)
-        cy1 = max(0, y1 - pad)
+        cy1 = max(0, y1)  # 既にタイトル考慮済み
         cx2 = min(w, x2 + pad)
         cy2 = min(h, y2 + pad)
 
@@ -234,20 +275,19 @@ def detect_and_crop(
         crop_path = crops_dir / crop_name
         crop_img.save(str(crop_path), "PNG")
 
-        label = region.get("label", "unknown")
-        description = region.get("description", "")
-
         crop_infos.append(CropInfo(
             crop_path=crop_path,
             sheet_image=sheet_image_path,
             sheet_index=sheet_idx,
             sheet_name=sheet_name,
             element_id=elem_id,
-            label=label,
-            description=description,
+            label=box["label"],
+            description=box["description"],
             bbox=BBox(x=x1, y=y1, width=bw, height=bh),
         ))
-        print(f"  → {crop_name}  [{label}]  ({x1},{y1})-({x2},{y2})  {bw}x{bh}px")
+        orig_y1 = box["original_y1"]
+        tag = f" (y1 {orig_y1}→{y1}, タイトル保険)" if y1 < orig_y1 else ""
+        print(f"  → {crop_name}  [{box['label']}]  ({x1},{y1})-({x2},{y2})  {bw}x{bh}px{tag}")
 
     if len(crop_infos) > config.crop_limit:
         print(f"  [警告] 検出数 {len(crop_infos)} がガードレール {config.crop_limit} を超えたため切り詰めます")

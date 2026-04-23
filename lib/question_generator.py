@@ -32,29 +32,33 @@ _QUESTION_SYSTEM = textwrap.dedent("""\
 """)
 
 _QUESTION_PROMPT = textwrap.dedent("""\
-    この画像（Excelシートの一部: {label}）に対して、
-    VQAデータセット用の多様な質問を8〜15問生成してください。
+    この画像（Excelシートの一部: {label}）に対して、VQAデータセット用の質問を生成してください。
 
-    【重要】質問タイプ別の最低生成数:
-    - factual（数値・事実確認）: 最低2問
-      例: 「A列の3行目の値はいくつですか？」「セルB5には何と書かれていますか？」
-    - comparative（比較）: 最低2問
-      例: 「〇〇と△△を比べると、どちらが大きいですか？」「最大値はどの項目ですか？」
-    - aggregation（集計）: 最低2問
-      例: 「この列の合計はいくらですか？」「平均値はいくらですか？」「いくつの行がありますか？」
-    - understanding（内容理解）: 最低2問
-      例: 「このテーブルは何を示していますか？」「ヘッダー行にはどんな項目がありますか？」
-    - reasoning（推論）: 最低2問
-      例: 「この数値の傾向から何が読み取れますか？」「最も注目すべき変化はどれですか？」
+    【★最重要: 画像の情報量に応じて質問数を決める】
+    - 情報量が少ない画像（短い説明文1つ・ボタン数個・見出しのみ等）: **3〜5問**
+    - 情報量が中程度（数行の説明文・小さい表等）: 5〜8問
+    - 情報量が多い（大きな表・複数の指標・長い手順等）: 8〜15問
+    **数合わせで水増ししないでください。本質的な質問だけを生成してください。**
+    1つの短い文・1つの値しか無い画像に10問以上作るのは明らかな水増しで禁止です。
 
-    難易度の定義:
-    - easy: 1つのセルから直接読み取れる（計算・比較不要）
-    - medium: 複数セルの参照・比較・簡単な四則演算が必要
-    - hard: 複数行/列の集計・傾向分析・多段階の推論が必要
+    【質問タイプ（任意・該当するものだけ）】
+    - factual（数値・事実確認）: セルの値・表示テキストを直接問う
+    - comparative（比較）: 複数の値を比べる（**2つ以上の比較対象がある場合のみ**）
+    - aggregation（集計）: 合計・平均・件数など（**集計できる数値データがある場合のみ**）
+    - understanding（内容理解）: 画像全体が何を示すか
+    - reasoning（推論）: データから読み取れる傾向・示唆（**複数データがある場合のみ**）
 
-    重複排除ルール:
-    - 同じセル・同じ内容を対象とした質問を複数生成しない
-    - 似た問い方・同じ答えになる質問は省く
+    **該当する対象が画像に無ければそのタイプは作らないでください。無理に作ると重複や的外れな質問になります。**
+
+    難易度:
+    - easy: 1つのセル/テキストから直接読み取れる
+    - medium: 複数セルの参照・比較・簡単な計算が必要
+    - hard: 複数行列の集計・傾向分析・多段階の推論が必要
+
+    【厳守: 重複禁止】
+    - 同じ内容を問う質問を複数作らない（文字数クイズ・言い換えによる水増し禁止）
+    - 答えが同じになる質問は1つだけにする
+    - 「最初の単語は？」「最後の単語は？」のような些末な形式クイズは作らない
 
     制約:
     - 質問は日本語
@@ -144,6 +148,8 @@ def generate_questions(
     VALID_DIFFICULTIES = {"easy", "medium", "hard"}
 
     questions: list[QuestionItem] = []
+    seen_normalized: set[str] = set()
+    dup_count = 0
     for item in items:
         q_text = item.get("question", "").strip()
         if not q_text:
@@ -151,6 +157,13 @@ def generate_questions(
         # 「？」で終わっていない場合は補完する
         if not (q_text.endswith("？") or q_text.endswith("?")):
             q_text = q_text.rstrip("。．.") + "？"
+
+        # 重複排除: 正規化キーで比較（空白・句読点・疑問符を除去し、全角/半角を統一）
+        normalized = re.sub(r"[\s?？。、,.!！]+", "", q_text).lower()
+        if normalized in seen_normalized:
+            dup_count += 1
+            continue
+        seen_normalized.add(normalized)
 
         q_type = item.get("question_type", "factual")
         if q_type not in VALID_TYPES:
@@ -167,6 +180,9 @@ def generate_questions(
             question_type=q_type,
             difficulty=q_diff,
         ))
+
+    if dup_count > 0:
+        print(f"  重複質問 {dup_count} 件を除外しました")
 
     if len(questions) > config.question_limit:
         print(f"  [警告] 質問数 {len(questions)} がガードレール {config.question_limit} を超えたため切り詰めます")
